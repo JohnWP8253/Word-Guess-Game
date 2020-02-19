@@ -1,7 +1,15 @@
 /* 
-css stylesheet 
+css stylesheet for game
 */
 
-body {
+
+.body {
+
+   
+}
+
+.container {
+    background: url('../images/denise-jans-tV80374iytg-unsplash.jpg');
+    height: 1000px;
     
 }
