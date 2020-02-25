@@ -8,26 +8,40 @@
     <!-- reset.css link -->
     <link rel="stylesheet" type="style/css" href="../Word-Guess-Game/assets/css/reset.css">
 
-    <!-- boostrap css link -->
+    <!-- boostrap css link
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 
     <!-- Google Fonts stylesheet -->
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Fredoka+One|Monoton&display=swap" rel="stylesheet">
 
     <!-- stylesheet css link -->
     <link rel="stylesheet" type="style/css" href="../Word-Guess-Game/assets/css/style.css">
 </head>
 
 <body>
-
     <div class="wrapper">
-        <h1>90s Movie Guessing Game</h1>
+        <h1 class="monoton">Movie Guessing Game</h1>
+        <h3 class="blackops">90s style</h3>
+    </div>
+
+    <div class="container">
+        <!-- div where posters are shown -->
+        <div id="poster-div"><img src="../Word-Guess-Game/assets/images/myke-simon-atsUqIm3wxo-unsplash.jpg" alt="myke-simon-atsUqIm3wxo-unsplash"></div>
+        <div id="game-box">
+            <p>Press any key to get started</p>
+            <div>
+                <h3 id="game-pieces">Wins</h3>
+                <div id="wins"></div>
+            </div>
+            
+        </div>
+
     </div>
 
 
     <!-- game.js link -->
-    <script type="text/javascript" src="../Word-Guess-Game/assets/javascript/game.js" async></script>
+    <script type="text/javascript" src="../Word-Guess-Game/assets/javascript/game.js"></script>
 </body>
 
 </html>

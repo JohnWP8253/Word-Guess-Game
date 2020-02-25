@@ -3,18 +3,26 @@ css stylesheet for game
 */
 
 
-.body {
 
-   
-}
-
-.container {
-    background-image: url('../images/denise-jans-tV80374iytg-unsplash.jpg');
+/* .wrapper {
+    posi
     
-}
+} */
 
 h1 {
     font-family: 'Monoton', cursive;
     font-size: 90px;
     text-align: center;
+}
+
+.blackops {
+    font-family: 'Black Ops One';
+    font-size: 75px;
+    text-align: center;
+    color: darkmagenta;
+}
+
+#poster-div {
+   margin-left: auto;
+   margin-right: auto;
 }
