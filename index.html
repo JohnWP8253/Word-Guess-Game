@@ -13,30 +13,49 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> -->
 
     <!-- Google Fonts stylesheet -->
-    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Fredoka+One|Monoton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Fredoka+One|Monoton&display=swap"
+        rel="stylesheet">
 
     <!-- stylesheet css link -->
     <link rel="stylesheet" type="style/css" href="../Word-Guess-Game/assets/css/style.css">
 </head>
 
 <body>
-    <div class="wrapper">
+    <div id="wrapper">
         <h1 class="monoton">Movie Guessing Game</h1>
         <h3 class="blackops">90s style</h3>
     </div>
 
     <div class="container">
         <!-- div where posters are shown -->
-        <div id="poster-div"><img src="../Word-Guess-Game/assets/images/myke-simon-atsUqIm3wxo-unsplash.jpg" alt="myke-simon-atsUqIm3wxo-unsplash"></div>
+        <div id="poster-div"><img src="../Word-Guess-Game/assets/images/myke-simon-atsUqIm3wxo-unsplash.jpg"
+                alt="myke-simon-atsUqIm3wxo-unsplash"></div>
         <div id="game-box">
             <p>Press any key to get started</p>
             <div>
                 <h3 id="game-pieces">Wins</h3>
+                <!-- div where wins are shown -->
                 <div id="wins"></div>
             </div>
-            
-        </div>
+            <div id="movie-title-section">
+                <h3 class="current-movie">Current Movie</h3>
 
+                <!-- div where current movie is shown -->
+                <div id="current-movie"></div>
+            </div>
+            <div id="guesses-left-section">
+                <h3 class="game-pieces">Number of Guesses Left</h3>
+
+                <!-- div where guesses left will be shown -->
+                <div id="guesses-left"></div>
+            </div>
+            <div id="guessed-letters-section">
+                <h3 class="game-pieces">Letters Already Guessed</h3>
+
+                <!-- div where guessed letters are shown -->
+                <div id="letters-guessed"></div>
+            </div>
+        </div>
     </div>
 
 
