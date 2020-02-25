@@ -9,7 +9,12 @@ css stylesheet for game
 }
 
 .container {
-    background: url('../images/denise-jans-tV80374iytg-unsplash.jpg');
-    height: 1000px;
+    background-image: url('../images/denise-jans-tV80374iytg-unsplash.jpg');
     
+}
+
+h1 {
+    font-family: 'Monoton', cursive;
+    font-size: 90px;
+    text-align: center;
 }
