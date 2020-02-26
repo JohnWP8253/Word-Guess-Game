@@ -86,10 +86,23 @@ var movieGuessingGame = {
             document.querySelector("#letters-guessed").innerHTML = this.lettersGuessed.join(", ");
         }
     },
-
+// Correct guess function
     updateMatchedLetters: function(letter) {
+        for (var i = 0; i < this.lettersOfTheMovie.length; i++) {
+            if ((letter === this.lettersOfTheMovie[i]) && (this.lettersMatched.indexOf(letter) === -1)) {
+                this.lettersMatched.push(letter);
+            }
+        }
+    },
 
-    }
+    // Function for user guess amount
+    processUpdateTotalGuesses: function() {
+        this.totalGuesses = this.lettersOfTheMovie.length +8;
+        this.guessesLeft = this.totalGuesses;
+
+        document.querySelector("#guesses-left").innerHTML = this.guessesLeft;
+    },
+    
 
 }
    
