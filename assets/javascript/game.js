@@ -45,6 +45,34 @@ var movieGuessingGame = {
     guessedLetter: null,
     wins: 0,
 
+    setupGame: function() {
+        var objKeys = Object.keys(this.moviesToPick);
+        this.moviesInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
+
+        this.lettersOfTheMovie = this.movieInPlay.split("");
+
+        this.rebuildMoviewView();
+
+        this.processUpdateTotalGuesses ();
+    },
+
+    updatePage: function(letter) {
+        if (this.guessesLeft === 0) {
+            this.restartGame();
+        }
+        else {
+            this.updateGuesses(letter);
+
+            this.updateMatchedLetters(letter);
+
+            this.rebuildMovieView();
+
+            if (this.updateWins() === true) {
+                this.restartGame();
+            }
+        }
+    },
+
     
 }
    

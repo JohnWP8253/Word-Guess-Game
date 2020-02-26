@@ -1,10 +1,21 @@
 /* 
 css stylesheet for game
 */
-
+/* body {
+    background: url("../images/denise-jans-tV80374iytg-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: 1000px;
+    width: 300px;
+    height: 300px;
+    
+    
+} */
 
 /* This didn't work properly */
 #wrapper {
+    background: url("../images/denise-jans-tV80374iytg-unsplash.jpg");
+    background-repeat: space;
+    background-size: inherit;
     top: 300px;
     left: 500px;
 }
@@ -13,6 +24,8 @@ h1 {
     font-family: 'Monoton', cursive;
     font-size: 75px;
     text-align: center;
+    color: darkblue;
+    text-decoration: underline;
 }
 
 .blackops {
