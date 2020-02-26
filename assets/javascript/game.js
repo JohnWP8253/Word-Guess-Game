@@ -45,6 +45,7 @@ var movieGuessingGame = {
     guessedLetter: null,
     wins: 0,
 
+// This is the game setup that is called when loading the page
     setupGame: function() {
         var objKeys = Object.keys(this.moviesToPick);
         this.moviesInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
@@ -73,6 +74,22 @@ var movieGuessingGame = {
         }
     },
 
-    
+    // Incorrect guess function
+    updateGuesses: function(letter) {
+        if ((this.lettersGuessed.indexOf(letter) === -1) && (this.lettersOfTheMovie.indexOf(letter) === -1)) {
+            
+            this.lettersGuessed.push(letter);
+
+            this.guessesLeft--;
+
+            document.querySelector("#guesses-left").innerHTML = this.guessesLeft;
+            document.querySelector("#letters-guessed").innerHTML = this.lettersGuessed.join(", ");
+        }
+    },
+
+    updateMatchedLetters: function(letter) {
+
+    }
+
 }
    
