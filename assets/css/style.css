@@ -20,6 +20,10 @@ css stylesheet for game
     left: 500px;
 }
 
+#poster-div {
+    margin: 0  auto;
+}
+
 h1 {
     font-family: 'Monoton', cursive;
     font-size: 75px;
@@ -30,10 +34,11 @@ h1 {
 
 .container {
     text-align: center;
+    font-family: 'Orbitron', cursive;
 }
 .blackops {
     font-family: 'Black Ops One';
-    font-size: 60px;
+    font-size: 50px;
     text-align: center;
     color: darkmagenta;
 }

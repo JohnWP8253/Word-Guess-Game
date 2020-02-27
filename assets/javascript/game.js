@@ -5,7 +5,7 @@
 // Movies to use - ["heat", "se7en", "goodfellas", "misery", "philadelphia", "aladdin", "clerks"];
 
 var movieGuessingGame = {
-    // The objects to choose from in the game
+  // The objects to choose from in the game
   moviesToGuess: {
     heat: {
       picture: "Heat.jpg",
@@ -36,7 +36,7 @@ var movieGuessingGame = {
       preview: "https://youtu.be/WTw51Ynkn7A"
     }
   },
-// Set variables for the guessing game
+  // Set variables for the guessing game
   movieInPlay: null,
   lettersOfTheMovie: [],
   lettersMatched: [],
@@ -47,9 +47,9 @@ var movieGuessingGame = {
   wins: 0,
 
   // This is the game setup that is called when loading the page
-  setupGame: function() {
-    var objKeys = Object.keys(this.moviesToPick);
-    this.moviesInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
+  setupGame: function () {
+    var objKeys = Object.keys(this.moviesToGuess);
+    this.movieInPlay = objKeys[Math.floor(Math.random() * objKeys.length)];
 
     this.lettersOfTheMovie = this.movieInPlay.split("");
 
@@ -58,13 +58,13 @@ var movieGuessingGame = {
     this.processUpdateTotalGuesses();
   },
 
-  updatePage: function(letter) {
+  updatePage: function (letter) {
     if (this.guessesLeft === 0) {
       this.restartGame();
     } else {
       this.updateGuesses(letter);
 
-      this.updateMatchedLetters(letter);
+      this.updateLettersMatched(letter);
 
       this.rebuildMovieView();
 
@@ -75,7 +75,7 @@ var movieGuessingGame = {
   },
 
   // Incorrect guess function
-  updateGuesses: function(letter) {
+  updateGuesses: function (letter) {
     // forLoop of the incorrect guesses
     if (
       this.lettersGuessed.indexOf(letter) === -1 &&
@@ -92,7 +92,7 @@ var movieGuessingGame = {
     }
   },
   // Correct guess function
-  updateMatchedLetters: function(letter) {
+  updateLettersMatched: function (letter) {
     // forLoop for correct guesses
     for (var i = 0; i < this.lettersOfTheMovie.length; i++) {
       if (
@@ -105,7 +105,7 @@ var movieGuessingGame = {
   },
 
   // Function for user guess amount
-  processUpdateTotalGuesses: function() {
+  processUpdateTotalGuesses: function () {
     this.totalGuesses = this.lettersOfTheMovie.length + 8;
     this.guessesLeft = this.totalGuesses;
 
@@ -113,7 +113,7 @@ var movieGuessingGame = {
   },
 
   // Shows movies being guessed.
-  rebuildMovieView: function() {
+  rebuildMovieView: function () {
     var movieView = "";
 
     for (var i = 0; i < this.lettersOfTheMovie.length; i++) {
@@ -130,8 +130,8 @@ var movieGuessingGame = {
     document.querySelector("#current-movie").innerHTML = movieView;
   },
 
-//   Restart function that resets all of the variables
-restartGame: function() {
+  //   Restart function that resets all of the variables
+  restartGame: function () {
     document.querySelector("#letters-guessed").innerHTML = "";
     this.movieInPlay = null;
     this.lettersOfTheMovie = [];
@@ -142,7 +142,51 @@ restartGame: function() {
     this.guessedLetter = null;
     this.setupGame();
     this.rebuildMovieView();
-},
+  },
 
+  updateWins: function () {
+    var win;
 
-}
+    // if the letter guessed is incorrect in the movie title, win is set to false.
+    if (this.lettersMatched.length === 0) {
+      win = false;
+    }
+    // on the other hand, we set win to true.
+    else {
+      win = true;
+    }
+
+    for (var i = 0; i < this.lettersOfTheMovie.length; i++) {
+      if (this.lettersMatched.indexOf(this.lettersOfTheMovie[i]) === -1) {
+        win = false;
+      }
+    }
+    // If the win is true...
+    if (win) {
+      this.wins = this.wins + 1;
+
+      document.querySelector("#wins").innerHTML = this.wins;
+
+      // document.querySelector("#game-box").innerHTML =
+      //   this.moviesToGuess[this.movieInPlay].picture + this.movieInPlay;
+
+      document.querySelector("#poster-div"),innerHTML =
+          "<img class='movie-poster' src='../images/" +
+          this.moviesToGuess[this.movieInPlay].picture +
+          "' alt='" + "'>";
+
+      return true;
+    }
+    return false;
+  }
+};
+
+movieGuessingGame.setupGame();
+
+document.onkeyup = function (event) {
+  if (event.keyCode >= 49 && event.keyCode <= 90) {
+    movieGuessingGame.guessedLetter = event.key.toLowerCase();
+
+    movieGuessingGame.updatePage(movieGuessingGame.guessedLetter);
+  }
+};
