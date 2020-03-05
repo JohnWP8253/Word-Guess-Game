@@ -170,11 +170,10 @@ var movieGuessingGame = {
       // document.querySelector("#game-box").innerHTML =
       //   this.moviesToGuess[this.movieInPlay].picture + this.movieInPlay;
 
-      document.querySelector("#poster-div"),innerHTML =
-          "<img class='movie-poster' src='../images/" +
-          this.moviesToGuess[this.movieInPlay].picture +
-          "' alt='" + "'>";
-
+      var img = document.querySelector("#poster-div");
+      console.log(img)
+          img.innerHTML = `<img class='movie-poster' src='../images/${this.moviesToGuess[this.movieInPlay].picture}>`;
+         
       return true;
     }
     return false;
